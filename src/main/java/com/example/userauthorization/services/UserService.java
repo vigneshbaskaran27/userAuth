@@ -91,7 +91,7 @@ public class UserService implements IuserService {
         String token = Jwts.builder().claims(jwtHeaders).signWith(secretKey).compact();
         headers.set(HttpHeaders.SET_COOKIE , token);
 
-        //creating and persting the session in db
+        //creating and persisting the session in db
         Session session = new Session();
         session.setUser(user);;
         session.setToken(token);
